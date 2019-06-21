@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog Site</title>
+    <div th:insert="fragments/styling :: head-style" ></div>
+</head>
+<body>
+<div th:insert="fragments/navbar :: navbar" ></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 th:text="${title}"></h1>
+                </div>
+                <div class="panel-body">
+                    <strong><p th:text="${author}"/></strong>
+                    <p th:text="${blogEntry}" />
+                </div>
+                <div class="panel-footer">
+                    <!-- Link to Update -->
+                    <!--<a th:href="@{'/blog_posts/{id}/edit'(id=${blog.id})}" class="btn btn-info" role="button">Edit Post</a>-->
+                    <!-- Link to Show  -->
+                    <a th:href="@{/}"><button class="btn btn-success">Back To Home Page</button></a>
+                    <!--  Link to Destroy -->
+                    <a th:href="@{/blog_posts/new}"><button class="btn btn-primary">Submit a New Blog Post</button></a>
+                    <!--<form th:action="@{'/blog_posts/{id}/delete'(id=${blog.id})}" th:method="delete" >-->
+                        <!--<button class="btn btn-primary">Delete Post</button>-->
+                    <!--</form>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:insert="fragments/styling :: body-links"></div>
+</body>
+</html>
